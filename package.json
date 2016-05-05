@@ -1,0 +1,25 @@
+{
+  "name": "mithril-node-pagination",
+  "version": "1.0.0",
+  "description": "Pagination component for Mithril NodeJS",
+  "main": "pagination.js",
+  "dependencies": {
+    "mithril": "^0.2.0"
+  },
+  "devDependencies": {
+    "mithril-node-render": "^0.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mithril-components/mithril_node_pagination.git"
+  },
+  "keywords": [
+    "mithril",
+    "pagination",
+    "nodejs"
+  ],
+  "bugs": {
+    "url": "https://github.com/mithril-components/mithril_node_pagination/issues"
+  },
+  "homepage": "https://github.com/mithril-components/mithril_node_pagination#readme"
+}
