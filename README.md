@@ -33,7 +33,7 @@ Options
 
 Test
 ----
+Setup [mithril-component-tools](https://github.com/mithril-components/mitthril-components-tools) first. Then:
 
-Setup `npm install -g mct`, then:
-
-    mct test .
+    npm install
+    mct test pagination.js en
