@@ -31,11 +31,14 @@ const pages = (page, totalPages) => {
 }
 
 const controller = (model) => { // {more, total, size, from, page, totalPages}
+    const url = model.url ? model.url : "${p}";
+
     if (model.totalPages) { // pagination mode
         return {
             page: model.page,
             more: model.more,
-            pages: pages(model.page, model.totalPages)
+            pages: pages(model.page, model.totalPages),
+            href: (p) => (isNaN(p) ? null : url.replace('${page}', p))
         }
     }
 }
@@ -46,18 +49,18 @@ const view = (ctrl) => {
             return m('nav', m('ul.pagination', [
                 // Not on the first page
                 ctrl.page < 2 ? '' : m('li',
-                    m('a', {href: ctrl.page - 1, 'aria-label': `Previous`},
+                    m('a', {href: ctrl.href(ctrl.page - 1), 'aria-label': `Previous`},
                         m('span', {'aria-hidden': true}, '«')
                     )
                 ),
                 ctrl.pages.map(p => {
                     return m('li',
                         {class: ctrl.page == p ? 'active' : null},
-                        m('a', {href: isNaN(p) ? null : `${p}`}, p)
+                        m('a', {href: ctrl.href(p)}, p)
                     );
                 }),
                 !ctrl.more ? '' : m('li',
-                    m('a', {href: ctrl.page + 1, 'aria-label': `Next`},
+                    m('a', {href: ctrl.href(ctrl.page + 1), 'aria-label': `Next`},
                         m('span', {'aria-hidden': true}, '»')
                     )
                 )

@@ -5,7 +5,8 @@ const pagination   = require('./pagination');
 
 const ctrl = pagination.controller({
     totalPages: 20,
-    page: 8
+    page: 8,
+    url: "${page}/do?some=parameter"
 });
 
 var view = pagination.view(ctrl);
