@@ -31,7 +31,7 @@ const pages = (page, totalPages) => {
 }
 
 const controller = (model) => { // {more, total, size, from, page, totalPages}
-    const url = model.url ? model.url : "${p}";
+    const url = model.url ? model.url : "${page}";
 
     if (model.totalPages) { // pagination mode
         return {
