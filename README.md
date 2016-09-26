@@ -30,7 +30,7 @@ Options
  * totalPages: Total number of pages.
  * total: Total number of record available.
  * more: True if more pages exist.
- * url: URL template for pagination. Default is "${page}"
+ * pattern: URL template for pagination. Default is "${page}"
 
 
 Test
